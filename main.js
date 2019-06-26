@@ -63,8 +63,11 @@ input.addEventListener("keyup", function(event){
         let title = imageGallery[i].title.toLowerCase();
         let captions = imageGallery[i].caption.toLowerCase();
             
-        if (captions.search(filter) || title.search(filter)) {
-                frames.hide();
+        if (filter === captions || filter === title){ // i wanted to test that if the search worked it would hide the items
+            frames[i].styleMedia.display = "none";
+        }
+        // if (captions.search(filter) || title.search(filter)) { ----- this is another option i tried
+        //         frames.hide();
         }
     }
     
